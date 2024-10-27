@@ -1,5 +1,6 @@
 package lk.ijse.pcms_B.dto.impl;
 
+import lk.ijse.pcms_B.enums.CropCondition;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,5 +14,6 @@ public class CropLogDTO {
     private String cropID;
     private String logID;
     private Date date;
-    private Date note;
+    private String note;
+    private CropCondition condition;
 }

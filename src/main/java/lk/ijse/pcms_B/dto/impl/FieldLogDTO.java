@@ -13,5 +13,5 @@ public class FieldLogDTO {
     private String fieldID;
     private String logID;
     private Date date;
-    private Date note;
+    private String observationDetail;
 }
