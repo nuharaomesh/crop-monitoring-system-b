@@ -1,34 +1,35 @@
 package lk.ijse.pcms_B.controller;
 
 import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/crops")
 public class CropController {
 
-    @GetMapping
-    public RequestEntity<Void> getCrop() {
+    @GetMapping(value = "/{cropID}")
+    public ResponseEntity<Void> getCrop(@PathVariable("cropID") String ID) {
         return null;
     }
 
     @GetMapping
-    public RequestEntity<Void> getAllCrops() {
+    public ResponseEntity<Void> getAllCrops() {
         return null;
     }
 
     @PostMapping
-    public RequestEntity<Void> saveCrop() {
+    public ResponseEntity<Void> saveCrop() {
         return null;
     }
 
     @PutMapping
-    public RequestEntity<Void> updateCrop() {
+    public ResponseEntity<Void> updateCrop() {
         return null;
     }
 
     @DeleteMapping
-    public RequestEntity<Void> deleteCrop() {
+    public ResponseEntity<Void> deleteCrop() {
         return null;
     }
 }

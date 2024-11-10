@@ -13,5 +13,5 @@ public class StaffLogDTO {
     private String staffID;
     private String logID;
     private Date date;
-    public String observationRole;
+    private String observationRole;
 }
