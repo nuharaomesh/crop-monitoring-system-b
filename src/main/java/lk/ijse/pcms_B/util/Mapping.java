@@ -1,13 +1,7 @@
 package lk.ijse.pcms_B.util;
 
-import lk.ijse.pcms_B.dto.impl.CropDTO;
-import lk.ijse.pcms_B.dto.impl.EquipmentDTO;
-import lk.ijse.pcms_B.dto.impl.FieldDTO;
-import lk.ijse.pcms_B.dto.impl.VehicleDTO;
-import lk.ijse.pcms_B.entity.impl.Crop;
-import lk.ijse.pcms_B.entity.impl.Equipment;
-import lk.ijse.pcms_B.entity.impl.Field;
-import lk.ijse.pcms_B.entity.impl.Vehicle;
+import lk.ijse.pcms_B.dto.impl.*;
+import lk.ijse.pcms_B.entity.impl.*;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,5 +60,17 @@ public class Mapping {
 
     public List<VehicleDTO> toVehicleDTOList(List<Vehicle> vehicleList) {
         return modelMapper.map(vehicleList, new TypeToken<List<VehicleDTO>>(){}.getType());
+    }
+
+    public Staff toStaffEntity(StaffDTO dto) {
+        return modelMapper.map(dto, Staff.class);
+    }
+
+    public StaffDTO toStaffDTO(Staff entity) {
+        return modelMapper.map(entity, StaffDTO.class);
+    }
+
+    public List<StaffDTO> toStaffList(List<Staff> staffList) {
+        return modelMapper.map(staffList, new TypeToken<List<StaffDTO>>(){}.getType());
     }
 }
