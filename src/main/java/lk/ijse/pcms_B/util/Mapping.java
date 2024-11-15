@@ -1,6 +1,8 @@
 package lk.ijse.pcms_B.util;
 
+import lk.ijse.pcms_B.dto.impl.EquipmentDTO;
 import lk.ijse.pcms_B.dto.impl.FieldDTO;
+import lk.ijse.pcms_B.entity.impl.Equipment;
 import lk.ijse.pcms_B.entity.impl.Field;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -22,7 +24,19 @@ public class Mapping {
         return modelMapper.map(entity, FieldDTO.class);
     }
 
-    public List<FieldDTO> getFieldDTOList(List<Field> fieldList) {
+    public List<FieldDTO> toFieldDTOList(List<Field> fieldList) {
         return modelMapper.map(fieldList, new TypeToken<List<FieldDTO>>(){}.getType());
+    }
+
+    public Equipment toEquipmentEntity(EquipmentDTO dto) {
+        return modelMapper.map(dto, Equipment.class);
+    }
+
+    public EquipmentDTO toEquipmentDTO(Equipment entity) {
+        return modelMapper.map(entity, EquipmentDTO.class);
+    }
+
+    public List<EquipmentDTO> toEquipmentDTOList(List<Equipment> equipmentList) {
+        return modelMapper.map(equipmentList, new TypeToken<List<EquipmentDTO>>(){}.getType());
     }
 }
