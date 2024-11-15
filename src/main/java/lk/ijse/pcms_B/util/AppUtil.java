@@ -16,6 +16,10 @@ public class AppUtil {
         return "CROP_CODE-" + UUID.randomUUID();
     }
 
+    public static String genVehicleCode() {
+        return "VEHICLE_CODE-" + UUID.randomUUID();
+    }
+
     public static String imgToBase64(byte[] byteImg) {
         return Base64.getEncoder().encodeToString(byteImg);
     }
