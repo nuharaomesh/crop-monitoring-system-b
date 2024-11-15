@@ -1,7 +1,9 @@
 package lk.ijse.pcms_B.util;
 
+import lk.ijse.pcms_B.dto.impl.CropDTO;
 import lk.ijse.pcms_B.dto.impl.EquipmentDTO;
 import lk.ijse.pcms_B.dto.impl.FieldDTO;
+import lk.ijse.pcms_B.entity.impl.Crop;
 import lk.ijse.pcms_B.entity.impl.Equipment;
 import lk.ijse.pcms_B.entity.impl.Field;
 import org.modelmapper.ModelMapper;
@@ -38,5 +40,17 @@ public class Mapping {
 
     public List<EquipmentDTO> toEquipmentDTOList(List<Equipment> equipmentList) {
         return modelMapper.map(equipmentList, new TypeToken<List<EquipmentDTO>>(){}.getType());
+    }
+
+    public Crop toCropEntity(CropDTO dto) {
+        return modelMapper.map(dto, Crop.class);
+    }
+
+    public CropDTO toCropDTO(Crop entity) {
+        return modelMapper.map(entity, CropDTO.class);
+    }
+
+    public List<CropDTO> toCropDTOList(List<Crop> equipmentList) {
+        return modelMapper.map(equipmentList, new TypeToken<List<CropDTO>>(){}.getType());
     }
 }
