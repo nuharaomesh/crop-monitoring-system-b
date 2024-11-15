@@ -38,7 +38,7 @@ public class FieldServiceImpl implements FieldService {
 
     @Override
     public List<FieldDTO> getAllFields() {
-        return mapping.getFieldDTOList(fieldDAO.findAll());
+        return mapping.toFieldDTOList(fieldDAO.findAll());
     }
 
     @Override
@@ -46,8 +46,7 @@ public class FieldServiceImpl implements FieldService {
         dto.setFieldCode(AppUtil.genFieldCode());
         Field savedField =
                 fieldDAO.save(mapping.toFieldEntity(dto));
-        if (savedField == null)
-            throw new DataPersistException("Field Not Saved!");
+        if (savedField == null) throw new DataPersistException("Field Not Saved!");
     }
 
     @Override
