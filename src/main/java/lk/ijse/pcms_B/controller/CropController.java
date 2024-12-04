@@ -10,15 +10,14 @@ import lk.ijse.pcms_B.util.AppUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("api/v1/crops")
 public class CropController {
 
@@ -43,8 +42,9 @@ public class CropController {
             @RequestPart("cropName") String cropName,
             @RequestPart("cropScientificName") String cropScientificName,
             @RequestPart("cropImg") MultipartFile cropImg,
-            @RequestPart("category") String category,
-            @RequestPart("cropSeason") String cropSeason
+            @RequestPart("cropCategory") String category,
+            @RequestPart("cropSeason") String cropSeason,
+            @RequestPart("cropGrowthTime") String cropTimeRange
     ) {
         try {
             byte[] bytesCropImg = cropImg.getBytes();
@@ -58,6 +58,7 @@ public class CropController {
             buildCropDTO.setCropImg(base64CropImg);
             buildCropDTO.setCategory(category);
             buildCropDTO.setCropSeason(cropSeason);
+            buildCropDTO.setCropTimeRange(cropTimeRange);
             cropService.saveCrop(buildCropDTO);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (DataPersistException e) {
@@ -76,8 +77,10 @@ public class CropController {
             @RequestPart("cropScientificName") String cropScientificName,
             @RequestPart("cropImg") MultipartFile cropImg,
             @RequestPart("category") String category,
-            @RequestPart("cropSeason") String cropSeason
+            @RequestPart("cropSeason") String cropSeason,
+            @RequestPart("cropGrowthTime") String cropTimeRange
     ) {
+        System.out.println("Crop code is:" + cropCode);
         try {
             byte[] bytesCropImg = cropImg.getBytes();
 
@@ -90,6 +93,7 @@ public class CropController {
             buildCropDTO.setCropImg(base64CropImg);
             buildCropDTO.setCategory(category);
             buildCropDTO.setCropSeason(cropSeason);
+            buildCropDTO.setCropTimeRange(cropTimeRange);
             cropService.updateCrop(cropCode, buildCropDTO);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (DataPersistException e) {

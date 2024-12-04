@@ -52,6 +52,8 @@ public class CropServiceImpl implements CropService {
     @Override
     public void updateCrop(String cropCode, CropDTO dto) {
         Optional<Crop> tmpCrop = cropDAO.findById(cropCode);
+        System.out.println("crop code" + cropCode);
+
         if (!tmpCrop.isPresent()) {
             throw new CropNotFoundException("Crop Not Found!");
         } else {
@@ -60,6 +62,7 @@ public class CropServiceImpl implements CropService {
             tmpCrop.get().setCropImg(dto.getCropImg());
             tmpCrop.get().setCategory(dto.getCategory());
             tmpCrop.get().setCropSeason(dto.getCropSeason());
+            tmpCrop.get().setCropTimeRange(dto.getCropTimeRange());
         }
     }
 
