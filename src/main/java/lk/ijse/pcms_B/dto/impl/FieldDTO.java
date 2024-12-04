@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class FieldDTO implements FieldStatus {
     private String fieldCode;
     private String fieldName;
+    private String fieldAddress;
     private String fieldLocation;
     private String fieldSize;
     private String img1;

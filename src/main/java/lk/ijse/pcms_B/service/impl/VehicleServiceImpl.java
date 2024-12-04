@@ -46,14 +46,14 @@ public class VehicleServiceImpl implements VehicleService {
         dto.setVehicleCode(AppUtil.genVehicleCode());
         Vehicle savedVehicle =
                 vehicleDAO.save(mapping.toVehicleEntity(dto));
-        if (savedVehicle == null) throw new DataPersistException("Vehicle Not saved!")
+        if (savedVehicle == null) throw new DataPersistException("Vehicle Not saved!");
     }
 
     @Override
     public void updateVehicle(String vehicleCode, VehicleDTO dto) {
         Optional<Vehicle> tmpVehicle = vehicleDAO.findById(vehicleCode);
         if (!tmpVehicle.isPresent()) {
-            throw new VehicleNotFoundException("Vehicle Not Found!")
+            throw new VehicleNotFoundException("Vehicle Not Found!");
         } else {
             tmpVehicle.get().setLicencePlateNumber(dto.getLicencePlateNumber());
             tmpVehicle.get().setCategory(dto.getCategory());

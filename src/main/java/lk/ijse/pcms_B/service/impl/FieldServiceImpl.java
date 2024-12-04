@@ -57,6 +57,7 @@ public class FieldServiceImpl implements FieldService {
         } else {
             tmpField.get().setFieldName(dto.getFieldName());
             tmpField.get().setFieldLocation(dto.getFieldLocation());
+            tmpField.get().setFieldAddress(dto.getFieldAddress());
             tmpField.get().setFieldSize(dto.getFieldSize());
             tmpField.get().setImg1(dto.getImg1());
             tmpField.get().setImg2(dto.getImg2());

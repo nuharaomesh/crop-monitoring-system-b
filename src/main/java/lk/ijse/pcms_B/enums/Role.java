@@ -1,5 +1,5 @@
 package lk.ijse.pcms_B.enums;
 
 public enum Role {
-    ADMIN,MANAGER,SCIENTIST
+    ADMIN,MANAGER,SCIENTIST,LABOR
 }

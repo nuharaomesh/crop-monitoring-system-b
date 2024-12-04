@@ -2,6 +2,7 @@ package lk.ijse.pcms_B.entity.impl;
 
 import jakarta.persistence.*;
 import lk.ijse.pcms_B.entity.SuperEntity;
+import lk.ijse.pcms_B.enums.Availability;
 import lk.ijse.pcms_B.enums.Gender;
 import lk.ijse.pcms_B.enums.Role;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,11 @@ public class Staff implements SuperEntity {
     private String staffID;
     private String firstName;
     private String lastName;
+    @Column(columnDefinition = "LONGTEXT")
+    private String staffImg;
     private String designation;
+    @Enumerated(EnumType.STRING)
+    private Availability status;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private Date joinedDate;

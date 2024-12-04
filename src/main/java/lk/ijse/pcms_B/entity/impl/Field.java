@@ -17,6 +17,7 @@ public class Field implements SuperEntity {
     @Id
     private String fieldCode;
     private String fieldName;
+    private String fieldAddress;
     private String fieldLocation;
     private String fieldSize;
     @Column(columnDefinition = "LONGTEXT")

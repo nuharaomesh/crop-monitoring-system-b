@@ -58,6 +58,7 @@ public class EquipmentServiceImpl implements EquipmentService {
             tmpEquipment.get().setName(dto.getName());
             tmpEquipment.get().setType(dto.getType());
             tmpEquipment.get().setStatus(dto.getStatus());
+            tmpEquipment.get().setCount(dto.getCount());
         }
     }
 

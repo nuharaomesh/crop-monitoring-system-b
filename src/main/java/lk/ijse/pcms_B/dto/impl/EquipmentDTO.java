@@ -15,5 +15,6 @@ public class EquipmentDTO implements EquipmentStatus {
     private String name;
     private EquipmentType type;
     private Availability status;
+    private int count;
     private String staffID;
 }

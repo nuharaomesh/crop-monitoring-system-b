@@ -1,6 +1,7 @@
 package lk.ijse.pcms_B.dto.impl;
 
 import lk.ijse.pcms_B.dto.StaffStatus;
+import lk.ijse.pcms_B.enums.Availability;
 import lk.ijse.pcms_B.enums.Gender;
 import lk.ijse.pcms_B.enums.Role;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,9 @@ public class StaffDTO implements StaffStatus {
     private String staffId;
     private String firstName;
     private String lastName;
+    private String staffImg;
     private String designation;
+    private Availability status;
     private Gender gender;
     private Date joinedDate;
     private Date dob;

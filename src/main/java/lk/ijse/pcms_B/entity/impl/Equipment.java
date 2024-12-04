@@ -23,6 +23,7 @@ public class Equipment implements SuperEntity {
     private EquipmentType type;
     @Enumerated(EnumType.STRING)
     private Availability status;
+    private int count;
     @OneToMany(mappedBy = "equipment")
     private List<Staff> staffs;
 }

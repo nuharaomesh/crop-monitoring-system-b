@@ -20,8 +20,7 @@ public class Cultivate implements SuperEntity {
     private String cultivateID;
     private Date plantingDate;
     private Date expectedHarvestDate;
-    @Enumerated(EnumType.STRING)
-    private GrowthStage growthStage;
+    private String cropName;
     @Enumerated(EnumType.STRING)
     private HarvestStatus status;
     @ManyToOne
